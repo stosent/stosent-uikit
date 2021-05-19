@@ -1,6 +1,10 @@
 import { createGlobalStyle } from "styled-components";
 
 const ResetCSS = createGlobalStyle`
+* {
+  @import url('https://fonts.googleapis.com/css2?family=Actor&amp;display=swap');
+  font-family: 'Actor';
+}
   /* prettier-ignore */
   html, body, div, span, applet, object, iframe,
   h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -64,7 +68,7 @@ const ResetCSS = createGlobalStyle`
     box-sizing: border-box;
   }
   * {
-    font-family: 'Kanit', sans-serif;
+    font-family: 'Actor', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
