@@ -2315,6 +2315,15 @@ var MenuLink = function (_a) {
     return React.createElement(Tag, __assign({}, props, otherProps));
 };
 
+var InnerMenuLink = function (_a) {
+    var href = _a.href, otherProps = __rest(_a, ["href"]);
+    var isHttpLink = href === null || href === void 0 ? void 0 : href.startsWith("http");
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    var Tag = isHttpLink ? "a" : NavLink;
+    var props = isHttpLink ? { href: href } : { to: href };
+    return React.createElement(Tag, __assign({}, props, otherProps, { target: "_blank", rel: "noreferrer" }));
+};
+
 var Icons = IconModule;
 var Container$3 = styled.div(templateObject_1$B || (templateObject_1$B = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  overflow-y: auto;\n  overflow-x: hidden;\n  height: 100%;\n"], ["\n  display: flex;\n  flex-direction: column;\n  overflow-y: auto;\n  overflow-x: hidden;\n  height: 100%;\n"])));
 var PanelBody = function (_a) {
@@ -2329,7 +2338,7 @@ var PanelBody = function (_a) {
         if (entry.items) {
             return (React.createElement(Accordion, { key: entry.label, isPushed: isPushed, pushNav: pushNav, icon: iconElement, label: entry.label, initialOpenState: entry.initialOpenState, className: calloutClass }, isPushed &&
                 entry.items.map(function (item) { return (React.createElement(MenuEntry, { key: item.href, secondary: true, isActive: item.href === location.pathname, onClick: handleClick },
-                    React.createElement(MenuLink, { href: item.href }, item.label))); })));
+                    React.createElement(InnerMenuLink, { href: item.href }, item.label))); })));
         }
         return (React.createElement(MenuEntry, { key: entry.label, isActive: entry.href === location.pathname, className: calloutClass },
             React.createElement(MenuLink, { href: entry.href, onClick: handleClick },
