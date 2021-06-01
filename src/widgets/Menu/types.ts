@@ -46,6 +46,7 @@ export interface PanelProps {
   langs: LangType[];
   setLang: (lang: LangType) => void;
   links: Array<MenuEntry>;
+  backgroundVideo: string;
   priceLink: string;
 }
 
