@@ -2677,10 +2677,9 @@ var MobileOnlyOverlay = styled(Overlay)(templateObject_5$1 || (templateObject_5$
     var theme = _a.theme;
     return theme.mediaQueries.nav;
 });
-var BackgroundVideo = styled.video(templateObject_6 || (templateObject_6 = __makeTemplateObject(["\n  object-fit: cover;\n  width: 100vw;\n  height: 100vh;\n  position: fixed;\n  top: 0;\n  left: 0;\n"], ["\n  object-fit: cover;\n  width: 100vw;\n  height: 100vh;\n  position: fixed;\n  top: 0;\n  left: 0;\n"])));
 var Menu = function (_a) {
     var _b;
-    var account = _a.account, login = _a.login, logout = _a.logout, isDark = _a.isDark, toggleTheme = _a.toggleTheme, langs = _a.langs, setLang = _a.setLang, currentLang = _a.currentLang, cakePriceUsd = _a.cakePriceUsd, links = _a.links, backgroundVideo = _a.backgroundVideo, priceLink = _a.priceLink, profile = _a.profile, children = _a.children;
+    var account = _a.account, login = _a.login, logout = _a.logout, isDark = _a.isDark, toggleTheme = _a.toggleTheme, langs = _a.langs, setLang = _a.setLang, currentLang = _a.currentLang, cakePriceUsd = _a.cakePriceUsd, links = _a.links, priceLink = _a.priceLink, profile = _a.profile, children = _a.children;
     var isXl = useMatchBreakpoints().isXl;
     var isMobile = isXl === false;
     var _c = useState(!isMobile), isPushed = _c[0], setIsPushed = _c[1];
@@ -2717,7 +2716,6 @@ var Menu = function (_a) {
     // Find the home link if provided
     var homeLink = links.find(function (link) { return link.label === "Home"; });
     return (React.createElement(React.Fragment, null,
-        React.createElement(BackgroundVideo, { src: backgroundVideo, autoPlay: true, loop: true, playsInline: true, muted: true }),
         React.createElement(Wrapper$1, null,
             React.createElement(StyledNav, { showMenu: showMenu },
                 React.createElement(Logo$1, { isPushed: isPushed, togglePush: function () { return setIsPushed(function (prevState) { return !prevState; }); }, isDark: isDark, href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/" }),
@@ -2725,11 +2723,11 @@ var Menu = function (_a) {
                     React.createElement(UserBlock, { account: account, login: login, logout: logout }),
                     profile && React.createElement(Avatar, { profile: profile }))),
             React.createElement(BodyWrapper, null,
-                React.createElement(Panel, { isPushed: isPushed, isMobile: isMobile, showMenu: showMenu, isDark: isDark, toggleTheme: toggleTheme, langs: langs, setLang: setLang, currentLang: currentLang, cakePriceUsd: cakePriceUsd, pushNav: setIsPushed, links: links, backgroundVideo: backgroundVideo, priceLink: priceLink }),
+                React.createElement(Panel, { isPushed: isPushed, isMobile: isMobile, showMenu: showMenu, isDark: isDark, toggleTheme: toggleTheme, langs: langs, setLang: setLang, currentLang: currentLang, cakePriceUsd: cakePriceUsd, pushNav: setIsPushed, links: links, priceLink: priceLink }),
                 React.createElement(Inner, { isPushed: isPushed, showMenu: showMenu }, children),
                 React.createElement(MobileOnlyOverlay, { show: isPushed, onClick: function () { return setIsPushed(false); }, role: "presentation" })))));
 };
-var templateObject_1$H, templateObject_2$f, templateObject_3$8, templateObject_4$3, templateObject_5$1, templateObject_6;
+var templateObject_1$H, templateObject_2$f, templateObject_3$8, templateObject_4$3, templateObject_5$1;
 
 var ToastAction = function (_a) {
     var action = _a.action;

@@ -58,15 +58,6 @@ const MobileOnlyOverlay = styled(Overlay)`
   }
 `;
 
-const BackgroundVideo = styled.video`
-  object-fit: cover;
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-`
-
 const Menu: React.FC<NavProps> = ({
   account,
   login,
@@ -78,7 +69,6 @@ const Menu: React.FC<NavProps> = ({
   currentLang,
   cakePriceUsd,
   links,
-  backgroundVideo,
   priceLink,
   profile,
   children,
@@ -123,7 +113,6 @@ const Menu: React.FC<NavProps> = ({
 
   return (
     <>
-    <BackgroundVideo src={backgroundVideo} autoPlay loop playsInline muted></BackgroundVideo>
     <Wrapper>
       <StyledNav showMenu={showMenu}>
         <Logo
@@ -150,7 +139,6 @@ const Menu: React.FC<NavProps> = ({
           cakePriceUsd={cakePriceUsd}
           pushNav={setIsPushed}
           links={links}
-          backgroundVideo={backgroundVideo}
           priceLink={priceLink}
         />
         <Inner isPushed={isPushed} showMenu={showMenu}>
